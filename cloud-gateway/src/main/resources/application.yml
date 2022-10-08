@@ -7,9 +7,9 @@ spring:
 
 
 
-cloud:
-  gateway:
-    routes:
+  cloud:
+    gateway:
+      routes:
       - id: USER-SERVICE
         uri: lb://USER-SERVICE
         predicates:
@@ -18,10 +18,10 @@ cloud:
         uri: lb://DEPARTMENT-SERVICE
         predicates:
           - Path=/departments/**
-      - id: FALLBACK-SERVICE
-        uri: lb://FALLBACK-SERVICE
-        predicates:
-          - Path=/departments/**
+#      - id: FALLBACK-SERVICE
+#        uri: lb://FALLBACK-SERVICE
+#        predicates:
+#          - Path=/departments/**
 
 
 eureka:
@@ -30,6 +30,6 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
-    instance:
-      hostname: localhost
+  instance:
+    hostname: localhost
 
