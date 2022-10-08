@@ -8,7 +8,6 @@ import java.beans.JavaBean;
 
 @SpringBootApplication
 @EnableEurekaServer
-
 public class ServiceRegistryApplication {
 
 	public static void main(String[] args) {

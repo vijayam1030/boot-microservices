@@ -1,0 +1,12 @@
+{
+    "userName": "Harry",
+    "depId": "1"
+}
+
+
+{
+    "depName":"Electronics",
+    "depAddress": "Osmania",
+    "depCode": "101"
+
+}
