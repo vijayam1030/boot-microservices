@@ -1,4 +1,4 @@
 FROM openjdk:19-jdk-alpine
-ADD target/docker-spring-boot.jar docker-spring-boot.jar
-EXPOSE 8005
-ENTRYPOINT ["java","-jar","/docker-spring-boot.jar","--server.port=8082"]
+ADD target/docker-user-service.jar docker-user-service.jar
+EXPOSE 9002
+ENTRYPOINT ["java","-jar","/docker-user-service.jar","--server.port=9002"]

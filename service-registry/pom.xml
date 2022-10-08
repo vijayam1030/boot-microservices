@@ -48,6 +48,8 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+
+		<finalName>docker-service-registry</finalName>
 	</build>
 
 </project>
