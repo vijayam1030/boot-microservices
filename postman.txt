@@ -13,3 +13,86 @@
 
 java -jar zipkin-server-2.23.19-exec.jar
 
+
+
+
+  Id CommandLine
+  -- -----------
+   1 docker build -t getting-started .
+   2 ls
+   3 docker build -t getting-started .
+   4  docker run -dp 3000:3000 getting-started
+   5 docker build -t getting-started .
+   6  docker run -dp 3000:3000 getting-started
+   7 docker ps
+   8 docker stop c536e27d0e3a
+   9 docker remove c536e27d0e3a
+  10 docker rm c536e27d0e3a
+  11  docker run -dp 3000:3000 getting-started
+  12 docker push docker/getting-started
+  13 docker image ls
+  14 docker login -u vijayam1030 .
+  15 docker login -u vijayam1030
+  16 docker tag getting-started YOUR-USER-NAME/getting-started
+  17 docker tag getting-started vijayam1030/getting-started
+  18 docker push  vijayam1030/getting-started
+  19 docker run -d ubuntu bash -c "shuf -i 1-10000 -n 1 -o /data.txt && tail -f /dev/null"
+  20 docker ps
+  21 docker exec 0231b43bfcef cat /data.txt
+  22  docker run -it ubuntu ls /
+  23 docker exec 0231b43bfcef ls /
+  24 history
+  25 docker ps
+  26 docker rm -f 0231b43bfcef
+  27  docker volume create todo-db
+  28 docker ps
+  29 docker rm -f 744317ff6cda
+  30 docker ps
+  31 docker volume create todo-db
+  32 docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started
+  33 docker ps
+  34 docker rm -f 08223956d6ca
+  35 docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started
+  36 docker volume inspect todo-db
+  37 docker ps
+  38 docker rm -f 31d00de01976
+  39 docker network create todo-app
+  40 docker run -d \
+  41      --network todo-app --network-alias mysql \
+  42      -v todo-mysql-data:/var/lib/mysql \
+  43      -e MYSQL_ROOT_PASSWORD=secret \
+  44      -e MYSQL_DATABASE=todos \
+  45      mysql:5.7
+  46 docker ps
+  47 docker rm -f dc6197a2293a
+  48  docker compose up -d
+  49  docker compose up -d
+  50 docker compose logs -f
+  51  docker compose up -d
+
+ 1 docker run -d `...
+   2 docker ps
+   3 docker exec -it 81be658c8bd1  mysql -u root -p
+   4 docker run -it --network todo-app nicolaka/netshoot
+   5 docker run -dp 3000:3000 \
+   6    -w /app -v "$(pwd):/app" \
+   7    --network todo-app \
+   8    -e MYSQL_HOST=mysql \
+   9    -e MYSQL_USER=root \
+  10    -e MYSQL_PASSWORD=secret \
+  11    -e MYSQL_DB=todos \
+  12    node:12-alpine \
+  13 docker run -dp 3000:3000 \
+  14    -w /app -v "$(pwd):/app" \
+  15    --network todo-app \
+  16    -e MYSQL_HOST=mysql \
+  17    -e MYSQL_USER=root \
+  18    -e MYSQL_PASSWORD=secret \
+  19    -e MYSQL_DB=todos \
+  20    node:12-alpine \
+  21 docker run -dp 3000:3000 `...
+  22 docker ps
+  23 docker logs 81be658c8bd1
+  24 nodemon src/index.js
+  25 docker ps
+  26 docker run -it --network todo-app nicolaka/netshoot
