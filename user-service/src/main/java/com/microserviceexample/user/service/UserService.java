@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -26,11 +28,14 @@ public class UserService {
         ResponseTemplateVO vo = new ResponseTemplateVO();
         Users user = userRepository.findByUserId(userId);
 
-        Department department = restTemplate.getForObject("http://localhost:9001/departments/"+ user.getDeptId(),Department.class);
+        Department department = restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/"+ user.getDeptId(),Department.class);
 
         vo.setUser(user);
         vo.setDepartment(department);
         return vo;
     }
 
+    public List<Users> getAllUsers() {
+        return userRepository.findAll();
+    }
 }

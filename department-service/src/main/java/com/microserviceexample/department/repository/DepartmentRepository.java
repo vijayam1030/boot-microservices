@@ -1,4 +1,4 @@
-package com.microserviceexample.department.service.repository;
+package com.microserviceexample.department.repository;
 
 import com.microserviceexample.department.entity.Department;
 import org.springframework.data.jpa.repository.JpaRepository;

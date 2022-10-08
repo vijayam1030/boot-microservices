@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/users")
 @Slf4j
@@ -26,5 +28,9 @@ public class UserController {
     @GetMapping("/{id}")
     public ResponseTemplateVO getUserWithDepartment(@PathVariable("id") Long userId){
         return userService.getUserwithDepartment(userId);
+    }
+    @GetMapping("all")
+    public List<Users> getAllUsers(){
+        return userService.getAllUsers();
     }
 }
