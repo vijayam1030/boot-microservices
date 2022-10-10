@@ -7,4 +7,9 @@ spring:
   zipkin:
     base-url: http://127.0.0.1:9411/
 
+logging:
+  pattern:
+    level: "%5p [${spring.zipkin.service.name:${spring.application.name:}},%X{traceId:-},%X{spanId:-}] [%X{ddd:-},%X{bp:-},%X{bpids:-}] [%X{op:-},%X{chunk:-},%X{i:-}]"
+
+
 

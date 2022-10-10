@@ -1,0 +1,54 @@
+version: '3.9'
+services:
+  serviceregistry:
+    container_name: service_registry
+    build:
+      context: ./service-registry
+      dockerfile: Dockerfile
+    ports:
+      - 8761:8761
+
+  configserver:
+    container_name: config_server
+    build:
+      context: ./cloud-config-server
+      dockerfile: Dockerfile
+    ports:
+      - 9296:9296
+
+  cloudgateway:
+    container_name: cloud_gateway
+    build:
+      context: ./cloud-gateway
+      dockerfile: Dockerfile
+    ports:
+      - 9191:9191
+
+  zipkinserver:
+    container_name: zipkin_server
+    build:
+      context: ./zipkin-server2
+      dockerfile: Dockerfile
+    ports:
+      - 9411:9411
+
+  userservice:
+    container_name: user_service
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    ports:
+      - 9002:9002
+
+  department:
+    container_name: department_service
+    build:
+      context: ./department-service
+      dockerfile: Dockerfile
+    ports:
+      - 9001:9001
+      
+networks:
+  default:
+    name: boot-microservices_default
+
