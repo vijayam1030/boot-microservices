@@ -1,0 +1,3 @@
+SPRING_CLOUD_CONFIG_SERVER_GIT_URI= https://github.com/vijayam1030/config-server
+SPRING_CLOUD_CONFIG_URI=http://configserver:9296
+SPRING_ZIPKIN_BASE-URL=http://zipkinserver:9411/
