@@ -1,0 +1,47 @@
+version: '3.0'
+services:
+  serviceregistry:
+    container_name: serviceregistry
+    build:
+      context: ./service-registry
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8761:8761
+
+
+  cloudgateway:
+    container_name: cloudgateway
+    build:
+      context: ./cloud-gateway
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 9191:9191
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://serviceregistry:8761/eureka
+
+  userservice:
+    container_name: userservice
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 9002:9002
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://serviceregistry:8761/eureka
+
+  departmentservice:
+    container_name: departmentservice
+    build:
+      context: ./department-service
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 9001:9001
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://serviceregistry:8761/eureka
+      
+
+
