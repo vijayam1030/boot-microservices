@@ -1,0 +1,23 @@
+eureka-server:
+  image: thorrism/eureka-server
+  ports:
+   - "8761:8761"
+user-registration:
+  image: thorrism/user-registration
+  ports:
+   - "9000:9000"
+  links:
+   - eureka-server
+  environment:
+    EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
+8888888888888888
+eureka-server:
+  image: rosenthal/eureka-server
+  ports:
+   - "8761:8761"
+user-registration:
+  image: rosenthal/user-registration
+  ports:
+   - "9000:9000"
+  environment:
+   - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
